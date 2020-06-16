@@ -35,7 +35,9 @@ steps:
     command: 'pack'
     packDirectory: '$(Build.ArtifactStagingDirectory)'
     projects: '**/*.csproj'
-    arguments: '-c $(buildConfiguration) /p:Version=$(build.buildnumber)' 
+    arguments: '-c $(buildConfiguration)' 
+    versioningScheme: byEnvVar
+    versionEnvVar: build.buildnumber
 
 - task: PublishBuildArtifacts@1
   inputs:
