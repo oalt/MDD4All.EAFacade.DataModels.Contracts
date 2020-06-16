@@ -33,8 +33,9 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
+    packDirectory: '$(Build.ArtifactStagingDirectory)'
     projects: '**/*.csproj'
-    arguments: '-c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory) /p:Version=$(versionToBuild).$(build.buildnumber)' 
+    arguments: '-c $(buildConfiguration) /p:Version=$(build.buildnumber)' 
 
 - task: PublishBuildArtifacts@1
   inputs:
