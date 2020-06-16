@@ -1,0 +1,42 @@
+# build to nuget package
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest' # examples of other options: 'macOS-10.15', 'ubuntu-18.04'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  versionToBuild: ''
+  
+
+name: $(BuildID)
+
+steps:
+
+- script: |
+    set /p VER=<src/version.txt
+    @echo ##vso[task.setvariable variable=versionToBuild]%VER%
+
+- script: |
+    echo The version from src/version.txt is $(versionToBuild)
+    @echo ##vso[build.updatebuildnumber]$(versionToBuild).$(build.buildnumber)
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    projects: '**/*.csproj'
+    arguments: '-c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory) /p:Version=$(versionToBuild).$(build.buildnumber)' 
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: Output
