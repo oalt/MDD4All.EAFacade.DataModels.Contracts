@@ -10,6 +10,7 @@
     <Version Condition=" '$(BUILD_BUILDNUMBER)' != '' ">$(BUILD_BUILDNUMBER)</Version>
     <AssemblyName>MDD4All.EAFacade.DataModels.Contracts</AssemblyName>
     <RootNamespace>MDD4All.EAFacade.DataModels.Contracts</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
