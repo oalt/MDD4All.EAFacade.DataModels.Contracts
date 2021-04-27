@@ -11,6 +11,8 @@
     <AssemblyName>MDD4All.EAFacade.DataModels.Contracts</AssemblyName>
     <RootNamespace>MDD4All.EAFacade.DataModels.Contracts</RootNamespace>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MDD4All_Github.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
 </Project>
