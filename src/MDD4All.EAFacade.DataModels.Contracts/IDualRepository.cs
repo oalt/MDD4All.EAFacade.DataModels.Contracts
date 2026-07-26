@@ -326,7 +326,7 @@ namespace MDD4All.EAFacade.DataModels.Contracts
 		/// <param name="PackageID"></param>
 		Package GetPackageByID(Int32 PackageID);
 
-		//Project GetProjectInterface();
+		Project GetProjectInterface();
 
 		/// 
 		/// <param name="ListName"></param>
