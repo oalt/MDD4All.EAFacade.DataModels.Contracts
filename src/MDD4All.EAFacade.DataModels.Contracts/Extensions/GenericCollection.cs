@@ -26,17 +26,17 @@ namespace MDD4All.EAFacade.DataModels.Contracts
             
         }
 
-        public object AddNew(string Name, string Type)
+        public virtual object AddNew(string Name, string Type)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(short index)
+        public virtual void Delete(short index)
         {
             RemoveAt(index);
         }
 
-        public void DeleteAt(short index, bool Refresh)
+        public virtual void DeleteAt(short index, bool Refresh)
         {
             RemoveAt(index);
         }
