@@ -88,13 +88,13 @@ namespace MDD4All.EAFacade.DataModels.Contracts
 
 		void GenerateSourceCode();
 
-		/// 
+		///
 		/// <param name="CodeIDs"></param>
-		//CodeObject GetClassCodeObjects(String CodeIDs);
+		Object GetClassCodeObjects(Object CodeIDs);
 
-		/// 
+		///
 		/// <param name="CodeID"></param>
-		//CodeObject GetCodeObject(String CodeID);
+		Object GetCodeObject(Object CodeID);
 
 		/// 
 		/// <param name="GUID"></param>
@@ -216,9 +216,9 @@ namespace MDD4All.EAFacade.DataModels.Contracts
 		/// <param name="IncludeSubPkgs"></param>
 		void SetReadOnly(Boolean ReadOnly, Boolean IncludeSubPkgs);
 
-		/// 
+		///
 		/// <param name="CodeIDs"></param>
-		//CodeObject ShallowGetClassCodeObjects(String CodeIDs);
+		Object ShallowGetClassCodeObjects(String CodeIDs);
 
 		String StereotypeEx
 		{
